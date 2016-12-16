@@ -12,5 +12,3 @@
 	    </apis>
   </service>
 </rsd>
-
-<!-- Localized -->
