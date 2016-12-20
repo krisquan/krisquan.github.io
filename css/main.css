@@ -9,13 +9,69 @@ html, body {
 	position: relative;
 }
 
+
+/*.loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: #999999
+}
+
+#preload-logo {
+	display: block;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	line-height: 0;
+}
+
+svg #tagline, svg #prim {
+	opacity: 1;
+}
+svg #e  {
+	opacity: 1;
+	animation: spin 1s linear infinite;
+}
+
+
+
+@-webkit-keyframes spin {
+    0%   { 
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%   { 
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+} 
+*/
+
 .right-1 {
-	height: 80vh;
+	height: 85vh;
 	background-color: white;
 }
 
 .left-1 {
-	height: 80vh;
+	height: 85vh;
 	background: url("../images/1.jpg") no-repeat center;
 	background-size: cover;
 }
@@ -132,13 +188,13 @@ a:before, a:after {
 }
 
 
-.diagonal {
+.header-row .diagonal {
 	position: absolute;
 	bottom: 0;
-  display: block;
-  width: 100%;
-  height: 90px;
-  background: transparent;
+	display: block;
+	width: 100%;
+	height: 90px;
+	background: transparent;
 }
 
 /*
@@ -185,10 +241,28 @@ a:before, a:after {
 }
 
 .community-row .card {
-	float: left;
+	margin: 0 auto;
+	margin-left: 150px;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 .flag-image {
 	margin: 0 auto;
+	margin-top: -80px;
 	width: 500px;
 }
+
+.diagonal-row {
+
+}
+
+.diagonal-row .diagonal {
+	position: absolute;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	height: 90px;
+	background: transparent;
+}
+
