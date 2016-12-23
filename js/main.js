@@ -1,69 +1,132 @@
-$(document).ready(function() {
-    kickstarter();
-    venobox();
+var button = $('#submit');
 
-    $('.jump').click(function() {
-        console.log('hi');
-        $('html, body').animate({
-            scrollTop: $('.email-row').offset().top
-        }, 500);
-        $('#email-form').select();
-       
-    });
+$('#email-form').keypress(function (e) {
+  if (e.which == 13) {
+    $('#submit').click();
+  }
 });
 
-function venobox() {
-    /* default settings */
-    $('.venobox').venobox(); 
+button.on('click', function(e) {
+	e.preventDefault();
+
+	// reset to submit state
+	if (button.hasClass('submitted')) {
+		button.removeClass('clicked');
+		button.removeClass('submitted');
+		button.off('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd');
+	}
+
+	// animate submit
+	else {
+		setTimeout(function(){
+			button.addClass('clicked');
+		}, 500);
+
+		button.on('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
+			$(this).addClass('submitted');
+		});
+	}
+});
 
 
-    var w = Math.floor( $( window ).width() / 1.5);
-    var h = Math.floor( $( window ).height() / 1.5);
+// $(document).ready(function() {
+//     kickstarter();
+//     venobox();
 
-    w = JSON.stringify(w);
-    h = JSON.stringify(h);
+//     $('.jump').click(function() {
+//         console.log('hi');
+//         $('html, body').animate({
+//             scrollTop: $('.email-row').offset().top
+//         }, 500);
+//         $('#email-form').select();
+       
+//     });
 
-    /* custom settings */
-    $('.venobox_custom').venobox({
-        framewidth: w,              // default: ''
-        frameheight: h,             // default: ''
-        bgcolor: '#000',         // default: '#fff'
-        titleattr: 'data-title',    // default: 'title'
-        numeratio: true,            // default: false
-        infinigall: true            // default: false
-    });
-}
+//     $('.button').click(function() {
+//         var email = $('.email-form').val();
+//         if (validateEmail(email))
+//         {
+//             // TODO: display success 
+//         }
+//         else 
+//         {
+//             // TODO: display error
+//         }
+//     });
+// });
 
-function kickstarter() {
-    var amountPledged = 500;
-    var goal = 9000;
-    var backers = 67;
-
-    var percentPledgedInt = amountPledged / goal * 100;
-    percentPledgedInt = Math.floor(percentPledgedInt);
-    var percentPledgedString = percentPledgedInt.toString();
-    console.log(percentPledgedString);
+// function venobox() {
+//     /* default settings */
+//     $('.venobox').venobox(); 
 
 
+//     var w = Math.floor( $( window ).width() / 1.5);
+//     var h = Math.floor( $( window ).height() / 1.5);
 
-    $('.progress-meter').animate({
-        width: percentPledgedString + "%"
-    }, 3000);
+//     w = JSON.stringify(w);
+//     h = JSON.stringify(h);
 
-    $('.amount-pledged').animateNumber({
-        number: amountPledged,
-    }, 3000);
+//     /* custom settings */
+//     $('.venobox_custom').venobox({
+//         framewidth: w,              // default: ''
+//         frameheight: h,             // default: ''
+//         bgcolor: '#000',         // default: '#fff'
+//         titleattr: 'data-title',    // default: 'title'
+//         numeratio: true,            // default: false
+//         infinigall: true            // default: false
+//     });
+// }
 
-    var percent_number_step = $.animateNumber.numberStepFactories.append('%');
-    $('.percent-funded').animateNumber({
-        number: percentPledgedInt,
-        numberStep: percent_number_step
-    }, 3000);
+// function kickstarter() {
+//     var amountPledged = 500;
+//     var goal = 9000;
+//     var backers = 67;
 
-    $('.num-backers').animateNumber({
-        number: backers
-    }, 3000);
-}
+//     var percentPledgedInt = amountPledged / goal * 100;
+//     percentPledgedInt = Math.floor(percentPledgedInt);
+//     var percentPledgedString = percentPledgedInt.toString();
+//     console.log(percentPledgedString);
+
+
+
+//     $('.progress-meter').animate({
+//         width: percentPledgedString + "%"
+//     }, 3000);
+
+//     $('.amount-pledged').animateNumber({
+//         number: amountPledged,
+//     }, 3000);
+
+//     var percent_number_step = $.animateNumber.numberStepFactories.append('%');
+//     $('.percent-funded').animateNumber({
+//         number: percentPledgedInt,
+//         numberStep: percent_number_step
+//     }, 3000);
+
+//     $('.num-backers').animateNumber({
+//         number: backers
+//     }, 3000);
+// }
+
+// function validateEmail(email) {
+//   var re = /\S+@\S+/;
+//   return re.test(email);
+// }
+
+// function validate() {
+//   $("#result").text("");
+//   var email = $("#email").val();
+//   if (validateEmail(email)) {
+//     $("#result").text(email + " is valid :)");
+//     $("#result").css("color", "green");
+//   } else {
+//     $("#result").text(email + " is not valid :(");
+//     $("#result").css("color", "red");
+//   }
+//   return false;
+// }
+
+// $("#validate").bind("click", validate);
 
 
 // // utility function to see if element is in viewport
@@ -76,17 +139,5 @@ function kickstarter() {
 
 //     return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 // }
-
-
-    // $.ajax({
-    // url: 'https://www.kickstarter.com/projects/portefino/portefini-the-everyday-blazer-for-all-occasions-an',
-    // type: 'GET',
-    // success: function(res) {
-    //     var data = $.parseHTML(res);  //<----try with $.parseHTML().
-    //     $(data).find('div.js-pledged').each(function(){
-    //         $('.amount-pledged').append($(this).html());
-    //     });
-    // }
-    // });
 
 

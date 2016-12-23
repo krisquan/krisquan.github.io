@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Prime</title>
-
+    
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,800,900" rel="stylesheet">
 	<link href="css/foundation.min.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
@@ -25,7 +26,7 @@
 	<div class="row wider-row">
 		<div class="small-12 columns header-col">
 			<div class="logo"><a href="."><img src="images/logo-white.png" alt="Prime Logo"></a></div>
-			<div class="jump"><a class="button primary medium" href="#">Subscribe</a></div>
+			<div class="jump"><a class="button primary medium" href="#">Stay Updated</a></div>
 <!-- 			<div class="header-text">COMING SOON | BAMBOO BOXER BRIEFS</div>
  -->		</div>
 	</div>
@@ -35,7 +36,7 @@
 	<div class="row wider-row contents-row">
 		<div class="large-10 small-12 small-centered columns contents-col">
 			<div class="row comfortable-row row-collapse">
-				<div class="card insane-comfort">
+				<div class="card small-12 insane-comfort">
 					<h2>Insane Comfort</h2>
 					<p>Bamboo is often compared to cashmere because of its luxuriously soft feel. The science behind it? The fiber structure in bamboo is naturally rounded. Hypoallergenic for people with sensitive skin. Unlike your tradition cotton boxers there are no stray spools to snag, irritate, and chaff your skin. </p>
 				</div>
@@ -118,7 +119,17 @@
 
 			<ul class="menu subscribe-container">
 				<li><input type="email" placeholder="Email address" id="email-form"></li>
-				<li><button type="button" class="button">Subscribe</button></li>
+				<li>
+					<button id="submit">
+					  <span class="icon"><i class="fa fa-check" aria-hidden="true"></i></span>
+					  <span class="text">Subscribe</span>
+					  <span class="spinner">
+					    <svg width="50" height="50">
+					      <circle r="23" cx="25" cy="25" />
+					    </svg>
+					  </span>
+					</button>
+				</li>
 			</ul>
 		</div>
 	</div>
