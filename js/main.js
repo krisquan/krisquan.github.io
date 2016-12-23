@@ -1,6 +1,15 @@
-$(document).ready(function(){
+$(document).ready(function() {
     kickstarter();
     venobox();
+
+    $('.jump').click(function() {
+        console.log('hi');
+        $('html, body').animate({
+            scrollTop: $('.email-row').offset().top
+        }, 500);
+        $('#email-form').select();
+       
+    });
 });
 
 function venobox() {
@@ -35,21 +44,25 @@ function kickstarter() {
     var percentPledgedString = percentPledgedInt.toString();
     console.log(percentPledgedString);
 
+
+
     $('.progress-meter').animate({
         width: percentPledgedString + "%"
-    }, 1500);
+    }, 3000);
 
     $('.amount-pledged').animateNumber({
-        number: amountPledged
-    }, 1500);
+        number: amountPledged,
+    }, 3000);
 
+    var percent_number_step = $.animateNumber.numberStepFactories.append('%');
     $('.percent-funded').animateNumber({
-        number: percentPledgedInt
-    }, 1500);
+        number: percentPledgedInt,
+        numberStep: percent_number_step
+    }, 3000);
 
     $('.num-backers').animateNumber({
         number: backers
-    }, 1500);
+    }, 3000);
 }
 
 

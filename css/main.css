@@ -4,6 +4,23 @@ html, body {
 	background: #999999	;
 }
 
+.button.primary {
+	font-family: 'Raleway';
+	font-weight: 600;
+	border-radius: 3px;
+	width: 300px;
+	background: white;
+	color: black;
+	border: 2px solid black;
+	position: relative;
+	margin: 0 auto;
+}
+
+.button.primary:hover {
+	background: black;
+	color: white;
+}
+
 .wider-row {
 	max-width: 1600px;
 }
@@ -21,6 +38,24 @@ html, body {
 
 .logo svg {
 	fill: white;
+}
+
+.jump {
+	position: absolute;
+	margin: 32px;
+	right: 0;
+}
+
+.button.primary.medium {
+	width: 100px;
+}
+
+.header-text {
+	color: #fff;
+	text-align: center;
+	font-size: 40px;
+	margin-top: 25vh;
+	font-weight: 800;
 }
 
 .venobox_custom {
@@ -58,44 +93,51 @@ html, body {
 	font-weight: 800;
 }
 
-.comfortable-row .card {
+.comfortable-row .insane-comfort {
 	margin: 0 auto;
 	margin-top: 50px;
 }
 
-.backpack-image {
+.performance-row .basketball-image {
 	float: left;
 	width: 500px;
 	margin-top: -80px;
 	margin-left: 20px;
 }
 
-.sustainable-row .card {
+.performance-row .uncompromising-performance {
 	float: right;
 	margin-top: 50px;
+	margin-bottom: -50px;
+	margin-right: -20px;
 }
 
-.community-row .card {
-	margin: 0 auto;
-	margin-left: 150px;
-	margin-top: 50px;
-	margin-bottom: 50px;
+.environment-row .incredibly-environmental {
+	float: left;
+	margin-top: -200px;
 }
 
 .flag-image {
-	margin: 0 auto;
-	margin-top: -80px;
+	float: right;
 	width: 500px;
 }
+
+.landscape-image {
+	width: 500px;
+}
+
+
+
+
 
 .diagonal-row svg {
 	display: block;
 	width: 100%;
-	height: 90px;
+	height: 50px;
 }
 
 .kickstarter-row {
-	background: #888888;
+	background: #fff;
 }
 
 .kickstarter-column {
@@ -108,9 +150,18 @@ html, body {
 	font-weight: 700;
 }
 
+.now-live {
+	color: #000;
+}
+
+.now-live:hover {
+	color: #000;
+}
+
 .kickstarter-column h4 {
 	font-family: 'Raleway';
 	text-align: center;
+	font-size: 20px;
 }
 
 .progress-container {
@@ -121,7 +172,11 @@ html, body {
 .success.progress {
 	width: 50%;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 40px;
+}
+
+.menu.simple {
+	margin: 32px;
 }
 
 .percent-funded, .amount-pledged, .num-backers {
@@ -129,20 +184,75 @@ html, body {
 	font-family: 'Raleway';
 }
 
+.button.primary.large {
 
-.button.primary {
-	font-family: 'Raleway';
-	font-weight: 600;
-	border-radius: 3px;
-	width: 300px;
-	background: white;
-	color: black;
-	border: 2px solid black;
-	position: relative;
-	margin: 50px auto;
 }
 
-.button.primary:hover {
-	background: black;
-	color: white;
+
+.email-row {
+	background: #000;
+}
+
+.mailing-list-cta {
+	font-family: 'Raleway';
+	font-size: 24px;
+	font-weight: 600;
+	color: #fff;
+	text-align: center;
+}
+
+.subscribe-container {
+	display: table; 
+	margin: 30px auto 50px auto;
+}
+
+.subscribe-container li {
+	display: table-cell;
+}
+
+.subscribe-container input {
+	font-weight: 600;
+	padding: 8px 20px;
+	height: 3rem;
+	width: 250px;
+	margin-right: 16px;
+	border: none;
+	border-radius: 2px;
+}
+
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #757575;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+  color: #757575;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+  color: #757575;
+}
+input:-moz-placeholder { /* Firefox 18- */
+  color: #757575;
+}
+
+button {
+	height: 3rem;
+	padding: 0 20px;
+}
+
+.subscribe-container button {
+	background: #00c85b;
+	border-radius: 2px;
+	font-family: 'Raleway';
+	font-weight: 600;
+	font-size: 1rem;
+}
+
+.subscribe-container button:hover {
+	background: #009544;
+}
+
+
+
+@media (max-width: 600px) {
+	
+
 }
