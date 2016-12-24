@@ -6,52 +6,48 @@ $('#email-form').keypress(function (e) {
 
 
 $(document).ready(function() {
-    kickstarter();
-    venobox();
-
+	// clicking button at top of page jumps to email signup
     $('.jump').click(function() {
-        console.log('hi');
         $('html, body').animate({
             scrollTop: $('.email-row').offset().top
         }, 500);
         $('#email-form').select();
-       
     });
 
-    $('.button').click(function() {
-        var email = $('.email-form').val();
-        if (validateEmail(email))
-        {
-            // TODO: display success 
-        }
-        else 
-        {
-            // TODO: display error
-        }
+	// form signup
+	$('#mc_embed_signup').find('form').ajaxChimp({
+		callback: function(response) {
+			console.log(response);
+			var message = "";
+
+			if (response.result === "success")
+			{
+				message = "Success! Check your inbox for a verification email.";
+			}
+			else 
+			{
+				message = "Error " + response.msg;
+			}
+      		$('form label').text(message);
+      	}
     });
+
+    // intialize video popup
+    $('.teaser').magnificPopup({
+          disableOn: 700,
+          type: 'iframe',
+          mainClass: 'mfp-fade',
+          removalDelay: 160,
+          preloader: false,
+
+          fixedContentPos: false
+      });
+
+
+	// kickstarter stats animation
+    kickstarter();
+
 });
-
-function venobox() {
-    /* default settings */
-    $('.venobox').venobox(); 
-
-
-    var w = Math.floor( $( window ).width() / 1.5);
-    var h = Math.floor( $( window ).height() / 1.5);
-
-    w = JSON.stringify(w);
-    h = JSON.stringify(h);
-
-    /* custom settings */
-    $('.venobox_custom').venobox({
-        framewidth: w,              // default: ''
-        frameheight: h,             // default: ''
-        bgcolor: '#000',         // default: '#fff'
-        titleattr: 'data-title',    // default: 'title'
-        numeratio: true,            // default: false
-        infinigall: true            // default: false
-    });
-}
 
 function kickstarter() {
     var amountPledged = 500;
@@ -81,7 +77,6 @@ function kickstarter() {
         number: backers
     }, 3000);
 }
-
 
 
 // // utility function to see if element is in viewport
