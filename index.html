@@ -116,27 +116,31 @@
 			<div class="mailing-list-cta">
 				Join our mailing list
 			</div>
-
-			<ul class="menu subscribe-container">
-				<li><input type="email" placeholder="Email address" id="email-form"></li>
-				<li>
-					<button id="submit">
-					  <span class="icon"><i class="fa fa-check" aria-hidden="true"></i></span>
-					  <span class="text">Subscribe</span>
-					  <span class="spinner">
-					    <svg width="50" height="50">
-					      <circle r="23" cx="25" cy="25" />
-					    </svg>
-					  </span>
+			
+			<form class="menu subscribe-container validate" action="https://facebook.us14.list-manage.com/subscribe/post?u=293e5111c0a6d074c5a2fee15&amp;id=d99110adf3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+				<input type="hidden" name="u" value="293e5111c0a6d074c5a2fee15">
+				<input type="hidden" name="id" value="d99110adf3">
+				<div class="wrap">
+					<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value id="email-form" placeholder="Email address">
+					<button type="submit" id="submit" class="button" name="submit">
+						<span class="icon"><i class="fa fa-check" aria-hidden="true"></i></span>
+						<span class="text">Subscribe</span>
+						<span class="spinner">
+							<svg width="50" height="50">
+								<circle r="23" cx="25" cy="25" />
+							</svg>
+						</span>
 					</button>
-				</li>
-			</ul>
+				</div>
+			</form>
 		</div>
 	</div>
 
 	<script type="text/javascript" src="js/jquery.js"></script>
 	
 	<script type="text/javascript" src="js/foundation.min.js"></script>
+
+	<script type="text/javascript" src="js/jquery.ajaxchimp.js"></script>
 
 	<script type="text/javascript" src="js/jquery.animateNumber.min.js"></script>
 

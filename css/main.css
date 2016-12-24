@@ -208,15 +208,17 @@ html, body {
 }
 
 .subscribe-container {
-	display: table; 
+	text-align: center;
 	margin: 30px auto 50px auto;
 }
 
-.subscribe-container li {
-	display: table-cell;
+.wrap {
+	display: inline-block;
+	margin: 0 auto;
 }
 
 .subscribe-container input {
+	float: left;
 	font-weight: 600;
 	padding: 8px 20px;
 	height: 3rem;
@@ -240,7 +242,7 @@ input:-moz-placeholder { /* Firefox 18- */
 }
 
 button {
-	display: block;
+	float: left;
 	position: relative;
 	height: 3rem;
 	padding: 0 20px;
