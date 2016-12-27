@@ -4,6 +4,11 @@ html, body {
 	background: #999999	;
 }
 
+/* ################### */
+/* SPLASH SECTION */
+/* ################### */
+
+
 .button.primary {
 	font-family: 'Raleway';
 	font-weight: 600;
@@ -31,12 +36,12 @@ html, body {
 	background-size: cover;
 }
 
-.logo {
+.logo-top {
 	position: absolute;
 	margin: 32px;
 }
 
-.logo svg {
+.logo-top svg {
 	fill: white;
 }
 
@@ -46,7 +51,7 @@ html, body {
 	right: 0;
 }
 
-.button.primary.medium {
+#jump-button {
 	width: 150px;
 }
 
@@ -73,6 +78,10 @@ html, body {
 .teaser svg:hover {
 	transform: scale(1.1);
 }
+
+/* ################### */
+/* INFO SECTION */
+/* ################### */
 
 .contents-row {
 	background: #F5F5F5;
@@ -133,6 +142,10 @@ html, body {
 	height: 50px;
 }
 
+/* ################### */
+/* KICKSTARTER SECTION */
+/* ################### */
+
 .kickstarter-row {
 	background: #fff;
 }
@@ -185,12 +198,30 @@ html, body {
 
 }
 
+.logo-bottom {
+	text-align: center;
+	margin: 24px;
+}
+
+.logo-bottom svg {
+	fill: white;
+}
+
+/* ################### */
+/* EMAIL SIGNUP SECTION */
+/* ################### */
+
 
 .email-row {
 	background: #000;
 }
 
-.mailing-list-cta {
+.subscribe-wrapper {
+	text-align: center;
+}
+
+.mailing-list {
+	margin-top: 48px;
 	font-family: 'Raleway';
 	font-size: 24px;
 	font-weight: 600;
@@ -198,15 +229,43 @@ html, body {
 	text-align: center;
 }
 
-.subscribe-container {
-	margin: 30px auto 50px auto;
+.mailing-list:hover {
+	cursor: pointer;
 }
 
-form label {
+.thank-you {
+	display: none;
+	font-family: 'Raleway';
+	font-size: 20px;
+	font-weight: 600;
 	color: #fff;
+	margin: 24px auto;
 }
 
-.subscribe-container input {
+#thank-you {
+	display: inline-block;
+}
+
+.subscribe-form {
+	display: inline-block;
+	margin: 24px auto;
+}
+
+.error-message {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Raleway';
+	font-size: 16px;
+	font-weight: 600;
+	color: red;
+	text-align: center;	
+}
+
+.email {
+	float: left;
 	font-weight: 600;
 	padding: 8px 20px;
 	height: 3rem;
@@ -239,6 +298,7 @@ button {
 }
 
 #mc-embedded-subscribe {
+	float: left;
 	height: 3rem;
 	background: #00c85b;
 	border: solid 2px #00c85b;
@@ -294,7 +354,6 @@ button {
   transition: all 0.35s ease;
 }
 
-
 #mc-embedded-subscribe.submitted {
   background-color: #00c85b;
   width: 150px;
@@ -309,13 +368,76 @@ button {
   font-size: 25px;
 }
 
+/* ################### */
+/* FOOTER SECTION */
+/* ################### */
+
+.footer-row {
+	background: #000;
+}
+
+.footer-top {
+	max-width: 800px;
+	height: 1px;
+	background: #555;
+	margin: 24px auto;
+	border: none;
+}
+
+#footer {
+	font-family: 'Raleway';
+}
+
+#footer h4 {
+	font-family: 'Raleway';
+	margin-top: 1em;
+	color: #fff;
+	font-weight: 800;
+	font-size: 16px;
+}
+
+#footer ul {
+	margin-top: 1em;
+	margin-left: 0px;
+	list-style: none;
+	border-top: 1px solid #333;
+}
+
+#footer ul li {
+	font-family: 'Raleway';
+	border-bottom: 1px solid #333;
+}
+
+#footer ul a {
+	font-family: 'Raleway';
+	color: #999;
+	display: block;
+	padding: .5em 0;
+}
+
+#footer ul a:hover {
+	color: white;
+}
+
+
+
 @keyframes fillup {
   to {
     stroke-dasharray: 200 200;
   }
 }
 
+@media (max-width: 450px) {
+	#jump-button {
+		width: 50px;
+	}
 
+	#jump-button .text {
+		display: none;
+	}
+
+
+}
 
 @media (max-width: 600px) {
 	

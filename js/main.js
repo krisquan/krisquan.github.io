@@ -1,83 +1,102 @@
 $('#email-form').keypress(function (e) {
   if (e.which == 13) {
-    $('#submit').click();
+	$('#submit').click();
   }
 });
 
 
 $(document).ready(function() {
 	// clicking button at top of page jumps to email signup
-    $('.jump').click(function() {
-        $('html, body').animate({
-            scrollTop: $('.email-row').offset().top
-        }, 500);
-        $('#email-form').select();
-    });
+	$('.jump').click(function() {
+		$('html, body').animate({
+			scrollTop: $('.email-row').offset().top
+		}, 500);
+		$('.email').select();
+	});
 
 	// form signup
-	$('#mc_embed_signup').find('form').ajaxChimp({
+	$('.subscribe-wrapper').find('form').ajaxChimp({
 		callback: function(response) {
-			console.log(response);
-			var message = "";
-
-			if (response.result === "success")
-			{
-				message = "Success! Check your inbox for a verification email.";
+			if (response.result === "success") {
+				var message = "Thanks for joining us. Check your inbox for a verification email.";
+				
+				// add thank you message, replacing the form
+				$('.mailing-list').hide();
+				$('.subscribe-form').hide();
+				$('.error-message').hide();
+				$('.thank-you').addClass('#thank-you');
+				$('#thank-you').append(message);
 			}
-			else 
-			{
-				message = "Error " + response.msg;
+			else {
+				shakeBoxAndReset($('.email'));
+				$('.error-message').text(response.msg);
 			}
-      		$('form label').text(message);
-      	}
-    });
+		}
+	});
 
-    // intialize video popup
-    $('.teaser').magnificPopup({
-          disableOn: 700,
-          type: 'iframe',
-          mainClass: 'mfp-fade',
-          removalDelay: 160,
-          preloader: false,
+	$('.mailing-list').click(function() {
+		$('.email').select();
+	});
 
-          fixedContentPos: false
-      });
+	// intialize video popup
+	$('.teaser').magnificPopup({
+		  disableOn: 700,
+		  type: 'iframe',
+		  mainClass: 'mfp-fade',
+		  removalDelay: 160,
+		  fixedContentPos: false
+	  });
 
 
 	// kickstarter stats animation
-    kickstarter();
+	// kickstarter();
 
 });
 
 function kickstarter() {
-    var amountPledged = 500;
-    var goal = 9000;
-    var backers = 67;
+	var amountPledged = 500;
+	var goal = 9000;
+	var backers = 67;
 
-    var percentPledgedInt = amountPledged / goal * 100;
-    percentPledgedInt = Math.floor(percentPledgedInt);
-    var percentPledgedString = percentPledgedInt.toString();
-    console.log(percentPledgedString);
+	var percentPledgedInt = amountPledged / goal * 100;
+	percentPledgedInt = Math.floor(percentPledgedInt);
+	var percentPledgedString = percentPledgedInt.toString();
 
-    $('.progress-meter').animate({
-        width: percentPledgedString + "%"
-    }, 3000);
+	$('.progress-meter').animate({
+		width: percentPledgedString + "%"
+	}, 3000);
 
-    $('.amount-pledged').animateNumber({
-        number: amountPledged,
-    }, 3000);
+	$('.amount-pledged').animateNumber({
+		number: amountPledged,
+	}, 3000);
 
-    var percent_number_step = $.animateNumber.numberStepFactories.append('%');
-    $('.percent-funded').animateNumber({
-        number: percentPledgedInt,
-        numberStep: percent_number_step
-    }, 3000);
+	var percent_number_step = $.animateNumber.numberStepFactories.append('%');
+	$('.percent-funded').animateNumber({
+		number: percentPledgedInt,
+		numberStep: percent_number_step
+	}, 3000);
 
-    $('.num-backers').animateNumber({
-        number: backers
-    }, 3000);
+	$('.num-backers').animateNumber({
+		number: backers
+	}, 3000);
 }
 
+function shakeBoxAndReset(box) {
+	var l = $(window).width() / 500;
+	for(var i = 0; i < 9; i++) {
+		box.animate( {
+			'margin-left': "+=" + ( l = -l ) + 'px',
+			'margin-right': "-=" + l + 'px'
+		}, 50);
+	}
+
+	box.animate( {
+		'margin-left': "+=" + ( l = -l ) + 'px',
+		'margin-right': "-=" + l + 'px'
+	}, 50, function() {
+		box.select();
+	});
+}
 
 // // utility function to see if element is in viewport
 // function isScrolledIntoView(elem) {
