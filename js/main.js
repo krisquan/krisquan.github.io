@@ -1,7 +1,7 @@
 $('#email-form').keypress(function (e) {
-  if (e.which == 13) {
-	$('#submit').click();
-  }
+	if (e.which == 13) {
+		$('#submit').click();
+	}
 });
 
 
@@ -29,7 +29,24 @@ $(document).ready(function() {
 			}
 			else {
 				shakeBoxAndReset($('.email'));
-				$('.error-message').text(response.msg);
+				switch(response.msg.slice(-3))
+				{
+					case 'lue':
+						$('.error-message').text("Please enter a value");
+						break;
+					case 'e @':
+						$('.error-message').text("Your email address needs an @");
+						break;
+					case 'ed.':
+						$('.error-message').text("Your email address doesn't go anywhere");
+						break;
+					case '/a>':
+						$('.error-message').text("You have already subscribed");
+						break;							
+					default:
+						$('.error-message').text("Your email address is missing something");
+						break;			
+				}
 			}
 		}
 	});
@@ -40,12 +57,12 @@ $(document).ready(function() {
 
 	// intialize video popup
 	$('.teaser').magnificPopup({
-		  disableOn: 700,
-		  type: 'iframe',
-		  mainClass: 'mfp-fade',
-		  removalDelay: 160,
-		  fixedContentPos: false
-	  });
+		disableOn: 700,
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		fixedContentPos: false
+	});
 
 
 	// kickstarter stats animation
