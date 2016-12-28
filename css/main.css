@@ -1,7 +1,7 @@
 html, body {
 	height: 100%;
-	font-family: 'Raleway', 'Helvetica Neue', Helvetica, sans-serif;
-	background: #999999	;
+	font-family: 'Raleway', 'Montserrat', Helvetica Neue', Helvetica, sans-serif;
+	background: #999999;
 }
 
 /* ################### */
@@ -14,7 +14,7 @@ html, body {
 	font-weight: 600;
 	border-radius: 3px;
 	width: 300px;
-	background: white;
+	background: rgba(255,255,255,0.7);
 	color: black;
 	border: 2px solid black;
 	position: relative;
@@ -31,6 +31,7 @@ html, body {
 }
 
 .header-col {
+	position: relative;
 	height: 95vh;
 	background: url("../images/backpack.jpg") no-repeat center;
 	background-size: cover;
@@ -55,12 +56,17 @@ html, body {
 	width: 150px;
 }
 
+#jump-button .text {
+	margin-left: 4px;
+}
+
 .header-text {
+	font-family: "Raleway";
+	font-weight: 700;
 	color: #fff;
 	text-align: center;
 	font-size: 40px;
 	margin-top: 25vh;
-	font-weight: 800;
 }
 
 .teaser {
@@ -69,6 +75,7 @@ html, body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	outline: 0;
+	z-index: 100;
 }
 
 .teaser svg {
@@ -102,44 +109,63 @@ html, body {
 	font-weight: 800;
 }
 
-.comfortable-row .insane-comfort {
+.card p {
+	font-family: "Raleway";
+}
+
+.insane-comfort {
 	margin: 0 auto;
 	margin-top: 50px;
 }
 
-.performance-row .basketball-image {
+.basketball-image {
 	float: left;
 	width: 500px;
 	margin-top: -80px;
 	margin-left: 20px;
 }
 
-.performance-row .uncompromising-performance {
+.uncompromising-performance {
 	float: right;
-	margin-top: 50px;
-	margin-bottom: -50px;
-	margin-right: -20px;
+	margin-top: -48px;
+	margin-bottom: -48px;
+	margin-left: 16px;
 }
 
-.environment-row .incredibly-environmental {
+.incredibly-environmental {
 	float: left;
-	margin-top: -200px;
-}
-
-.flag-image {
-	float: right;
-	width: 500px;
+	margin-top: -100px;
 }
 
 .landscape-image {
+	float: right;
 	width: 500px;
+	margin-top: 80px;
+	margin-right: 32px;
 }
 
 
-.diagonal-row svg {
-	display: block;
+.flag-image {
+	float: left;
+	width: 500px;
+	margin-top: 60px;
+}
+
+
+
+.greatest-feature {
+	float: right;
+	margin-top: -40px;
+	margin-bottom: 50px;
+}
+
+
+#diagonal {
 	width: 100%;
-	height: 50px;
+}
+
+.contents-diagonal {
+	background: #f5f5f5;
 }
 
 /* ################### */
@@ -169,30 +195,56 @@ html, body {
 }
 
 .kickstarter-column h4 {
-	font-family: 'Raleway';
+	font-family: 'Montserrat';
 	text-align: center;
 	font-size: 20px;
 }
 
-.progress-container {
-	position: relative;
-	margin: 0 auto;
-}
-
-.success.progress {
+.progress-bar-container {
 	width: 50%;
 	margin: 0 auto;
 	margin-top: 40px;
 }
 
-.menu.simple {
+.progress-bar {
+	position: relative;
+	margin: 0 auto;
+	height: 13px;
+	border-radius: 10px;
+	width: 100%;
+	max-width: 400px;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar-completed {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 13px;
+	border-radius: 10px;
+	background: #00c85b;
+	transition: width 500ms linear;
+}
+
+
+
+.progress-numbers {
 	margin: 32px;
+	font-family: 'Montserrat';
 }
 
 .percent-funded, .amount-pledged, .num-backers {
-	font-size: 40px;
-	font-family: 'Raleway';
+	font-size: 32px;
+	color: #000;
 }
+
+.progress-description {
+	font-size: 13px;
+	color: #656565;
+}
+
+
 
 .button.primary.large {
 
@@ -258,10 +310,11 @@ html, body {
 	margin-left: auto;
 	margin-right: auto;
 	font-family: 'Raleway';
-	font-size: 16px;
+	font-size: 12px;
 	font-weight: 600;
 	color: red;
 	text-align: center;	
+	white-space: nowrap;
 }
 
 .email {
@@ -273,6 +326,12 @@ html, body {
 	margin-right: 16px;
 	border: none;
 	border-radius: 2px;
+}
+
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
+    border-color: rgba(0, 200, 91, 0.8);
+    box-shadow: 0 2px 2px rgba(0, 200, 91, 0.075) inset, 0 0 8px rgba(0, 200, 91, 0.6);
+    outline: 0 none;
 }
 
 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -289,6 +348,7 @@ input:-moz-placeholder { /* Firefox 18- */
 }
 
 button {
+	float: left;
 	position: relative;
 	height: 3rem;
 	padding: 0 20px;
@@ -374,6 +434,7 @@ button {
 
 .footer-row {
 	background: #000;
+	padding-top: 36px;
 }
 
 .footer-top {
@@ -427,7 +488,7 @@ button {
   }
 }
 
-@media (max-width: 450px) {
+@media screen and (max-width: 27.5em) {
 	#jump-button {
 		width: 50px;
 	}
@@ -436,10 +497,35 @@ button {
 		display: none;
 	}
 
-
+	/* fix subscribe button; center both on different
+	lines */
 }
 
-@media (max-width: 600px) {
-	
+@media screen and (max-width: 39.9375em) {
+	.header-text {
+		font-size: 24px;
+	}
+	.insane-comfort, .basketball-image, .uncompromising-performance,
+	.flag-image, .incredibly-environmental, .landscape-image, .greatest-feature {
+		margin: 0;
+		margin-bottom: 16px;
+	}
 
+	.basketball-image, .flag-image, .landscape-image {
+		width: 100%;
+	}
+
+	.card {
+		max-width: none;
+		width: 100%;
+		padding: 50px 50px 70px;
+	}
+
+	.insane-comfort {
+		margin-top: 24px;
+	}
+
+	.greatest-feature {
+		margin-bottom: 40px;
+	}
 }

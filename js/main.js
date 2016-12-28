@@ -49,12 +49,12 @@ $(document).ready(function() {
 
 
 	// kickstarter stats animation
-	// kickstarter();
+	kickstarter();
 
 });
 
 function kickstarter() {
-	var amountPledged = 500;
+	var amountPledged = 5000;
 	var goal = 9000;
 	var backers = 67;
 
@@ -62,18 +62,18 @@ function kickstarter() {
 	percentPledgedInt = Math.floor(percentPledgedInt);
 	var percentPledgedString = percentPledgedInt.toString();
 
-	$('.progress-meter').animate({
+	$('.progress-bar-completed').animate({
 		width: percentPledgedString + "%"
+	}, 2500);
+
+	$('.amount-pledged .2').animateNumber({
+		number: amountPledged
 	}, 3000);
 
-	$('.amount-pledged').animateNumber({
-		number: amountPledged,
-	}, 3000);
-
-	var percent_number_step = $.animateNumber.numberStepFactories.append('%');
+	var percentageSign = $.animateNumber.numberStepFactories.append('%');
 	$('.percent-funded').animateNumber({
 		number: percentPledgedInt,
-		numberStep: percent_number_step
+		numberStep: percentageSign
 	}, 3000);
 
 	$('.num-backers').animateNumber({
