@@ -57,12 +57,12 @@ $(document).ready(function() {
 
 	// intialize video popup
 	$('.teaser').magnificPopup({
-		disableOn: 700,
+		disableOn: 0,
 		type: 'iframe',
 		mainClass: 'mfp-fade',
 		removalDelay: 160,
 		fixedContentPos: false
-	});
+	  });
 
 
 	// kickstarter stats animation
