@@ -437,49 +437,28 @@ button {
 	padding-top: 36px;
 }
 
-.footer-top {
-	max-width: 800px;
-	height: 1px;
-	background: #555;
-	margin: 24px auto;
-	border: none;
+.copywright-column {
+	position: relative;
 }
 
-#footer {
-	font-family: 'Raleway';
-}
-
-#footer h4 {
-	font-family: 'Raleway';
-	margin-top: 1em;
+.copywright-column p {
+	position: absolute;
+	bottom: -24px;
+	font-family: 'Montserrat';
+	font-size: 10px;
 	color: #fff;
-	font-weight: 800;
-	font-size: 16px;
+	margin-bottom: 0;
 }
 
-#footer ul {
-	margin-top: 1em;
-	margin-left: 0px;
-	list-style: none;
-	border-top: 1px solid #333;
+.inline-list li {
+	float: right;
+	margin-left: 8px;
+	margin-bottom: 8px;
 }
 
-#footer ul li {
-	font-family: 'Raleway';
-	border-bottom: 1px solid #333;
+.inline-list li a {
+	color: #fff;
 }
-
-#footer ul a {
-	font-family: 'Raleway';
-	color: #999;
-	display: block;
-	padding: .5em 0;
-}
-
-#footer ul a:hover {
-	color: white;
-}
-
 
 
 @keyframes fillup {
