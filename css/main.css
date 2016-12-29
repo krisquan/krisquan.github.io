@@ -1,7 +1,7 @@
 html, body {
 	height: 100%;
 	font-family: 'Raleway', 'Montserrat', Helvetica Neue', Helvetica, sans-serif;
-	background: #999999;
+	background: #F0F0F0;
 }
 
 /* ################### */
@@ -490,7 +490,8 @@ button {
 	lines */
 }
 
-@media screen and (max-width: 39.9375em) {
+/* foundation : small */
+@media screen and (max-width: 40em) {
 	.header-text {
 		font-size: 24px;
 	}
@@ -516,5 +517,20 @@ button {
 
 	.greatest-feature {
 		margin-bottom: 40px;
+	}
+
+	.footer-row .medium-4 {
+		text-align: center;
+	}
+
+	.footer-row .medium-4 ul {
+		display: relative;
+		margin: 0 auto;
+		margin-bottom: 12px;
+	}
+
+	.footer-row .medium-4 ul li {
+		float: none;
+		display: inline;
 	}
 }
