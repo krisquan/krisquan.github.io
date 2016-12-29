@@ -18,7 +18,7 @@ $(document).ready(function() {
 	$('.subscribe-wrapper').find('form').ajaxChimp({
 		callback: function(response) {
 			if (response.result === "success") {
-				var message = "Thanks for joining us. Check your inbox for a verification email.";
+				var message = "You're almost there! Check your inbox for a verification email.";
 				
 				// add thank you message, replacing the form
 				$('.mailing-list').hide();
