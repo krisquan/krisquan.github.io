@@ -516,6 +516,28 @@ button {
 	}
 
 
+	.mailing-list {
+		font-size: 16px;
+	}
+
+	.footer-row .medium-4 {
+		text-align: center;
+	}
+
+	.footer-row .medium-4 ul {
+		display: relative;
+		margin: 0 auto;
+		margin-bottom: 12px;
+	}
+
+	.footer-row .medium-4 ul li {
+		float: none;
+		display: inline;
+	}
+}
+
+/* foundation : medium */
+@media only screen and (max-width: 60em) {
 	.insane-comfort, .basketball-image, .uncompromising-performance,
 	.flag-image, .incredibly-environmental, .landscape-image, .greatest-feature {
 		margin: 0;
@@ -539,23 +561,10 @@ button {
 	.greatest-feature {
 		margin-bottom: 40px;
 	}
+}
 
-	.mailing-list {
-		font-size: 16px;
-	}
-
-	.footer-row .medium-4 {
-		text-align: center;
-	}
-
-	.footer-row .medium-4 ul {
-		display: relative;
-		margin: 0 auto;
-		margin-bottom: 12px;
-	}
-
-	.footer-row .medium-4 ul li {
-		float: none;
-		display: inline;
+@media only screen and (max-width: 81.938em) {
+	.contents-col {
+		width: 1024px;
 	}
 }
