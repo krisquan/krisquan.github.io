@@ -109,7 +109,9 @@ html, body {
 
 .contents-col {
 	background: #F5F5F5;
+	max-width: 1100px;
 }
+
 .card {
 	max-width: 420px;
 	margin: 0 auto;
@@ -387,61 +389,6 @@ button {
 	cursor: pointer;
 }
 
-#mc-embedded-subscribe.clicked {
-  padding: 0;
-  width: 50px;
-  background: #FFF;
-  border-width: 4px;
-  border-radius: 100px;
-  border-color: #CCC;
-  background: conic-gradient(#655 40%, yellowgreen 0);
-}
-#mc-embedded-subscribe.clicked span.text {
-  display: none;
-}
-#mc-embedded-subscribe.clicked .spinner {
-  display: block;
-}
-#mc-embedded-subscribe.clicked .spinner circle {
-  animation: fillup 1s cubic-bezier(1, 0.04, 0.41, 0.76) 0.35s;
-  animation-fill-mode: forwards;
-}
-
-#mc-embedded-subscribe .spinner {
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  display: none;
-}
-#mc-embedded-subscribe .spinner svg {
-  transform: rotate(-90deg);
-}
-#mc-embedded-subscribe .spinner circle {
-  fill: transparent;
-  stroke: #00c85b;
-  stroke-width: 4;
-  stroke-dasharray: 0 200;
-}
-#mc-embedded-subscribe .icon {
-  font-size: 0;
-  color: #FFF;
-  transition: all 0.35s ease;
-}
-
-#mc-embedded-subscribe.submitted {
-  background-color: #00c85b;
-  width: 150px;
-  border-width: 2px;
-  border-radius: 2px;
-  border-color: #00c85b;
-}
-#mc-embedded-subscribe.submitted .spinner {
-  display: none;
-}
-#mc-embedded-subscribe.submitted .icon {
-  font-size: 25px;
-}
-
 /* ################### */
 /* FOOTER SECTION */
 /* ################### */
@@ -491,53 +438,15 @@ button {
   }
 }
 
-@media screen and (max-width: 27.5em) {
-	#jump-button {
-		width: 50px;
-	}
-
-	#jump-button .text {
-		display: none;
-	}
-
-	.email, #mc-embedded-subscribe {
-		clear: both;
-	}
-}
-
-/* foundation : small */
-@media screen and (max-width: 40em) {
-	.header-text {
-		font-size: 24px;
-	}
-
-	.header-image img {
-		height: 40px;
-	}
-
-
-	.mailing-list {
-		font-size: 16px;
-	}
-
-	.footer-row .medium-4 {
-		text-align: center;
-	}
-
-	.footer-row .medium-4 ul {
-		display: relative;
-		margin: 0 auto;
-		margin-bottom: 12px;
-	}
-
-	.footer-row .medium-4 ul li {
-		float: none;
-		display: inline;
+@media only screen and (min-width: 60.01em ) and (max-width: 90em) {
+	.contents-col {
+		width: 1024px;
 	}
 }
 
 /* foundation : medium */
 @media only screen and (max-width: 60em) {
+
 	.insane-comfort, .basketball-image, .uncompromising-performance,
 	.flag-image, .incredibly-environmental, .landscape-image, .greatest-feature {
 		margin: 0;
@@ -563,8 +472,49 @@ button {
 	}
 }
 
-@media only screen and (max-width: 81.938em) {
-	.contents-col {
-		width: 1024px;
+/* foundation : small */
+@media screen and (max-width: 40em) {
+	.header-text {
+		font-size: 24px;
+	}
+
+	.header-image img {
+		height: 40px;
+	}
+
+	.mailing-list {
+		font-size: 16px;
+	}
+
+	.footer-row .medium-4 {
+		text-align: center;
+	}
+
+	.footer-row .medium-4 ul {
+		display: relative;
+		margin: 0 auto;
+		margin-bottom: 12px;
+	}
+
+	.footer-row .medium-4 ul li {
+		float: none;
+		display: inline;
 	}
 }
+
+
+@media screen and (max-width: 27.5em) {
+	#jump-button {
+		width: 50px;
+	}
+
+	#jump-button .text {
+		display: none;
+	}
+
+	.email, #mc-embedded-subscribe {
+		clear: both;
+	}
+}
+
+
