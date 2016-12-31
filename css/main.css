@@ -438,14 +438,14 @@ button {
   }
 }
 
-@media only screen and (min-width: 60.01em ) and (max-width: 90em) {
+@media only screen and (min-width: 64em ) and (max-width: 90em) {
 	.contents-col {
 		width: 1024px;
 	}
 }
 
 /* foundation : medium */
-@media only screen and (max-width: 60em) {
+@media only screen and (max-width: 61.75em) {
 
 	.insane-comfort, .basketball-image, .uncompromising-performance,
 	.flag-image, .incredibly-environmental, .landscape-image, .greatest-feature {
