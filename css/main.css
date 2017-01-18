@@ -279,8 +279,8 @@ button {
 }
 
 .logo-bottom {
-	text-align: center;
-	margin: 24px;
+	width: 106px;
+	margin: 24px auto;
 }
 
 .logo-bottom svg {
