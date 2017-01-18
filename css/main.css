@@ -21,7 +21,7 @@ button {
 /* ################### */
 
 .button.primary {
-	background: #00E179;
+	background: #72E586;
 	color: #fff;
 
 	border-radius: 2px;
@@ -32,7 +32,7 @@ button {
 }
 
 .button.primary:hover {
-	background: #00c85b;
+	background: #68D27A;
 	color: #fff;
 }
 
@@ -50,6 +50,7 @@ button {
 .logo-top {
 	position: absolute;
 	margin: 32px;
+	width: 120px;
 }
 
 .logo-top svg {
@@ -376,7 +377,7 @@ input:-moz-placeholder { /* Firefox 18- */
 #mc-embedded-subscribe {
 	float: left;
 	height: 3rem;
-	background: #00E179;
+	background: #00CA6C;
 
 	border-radius: 2px;
 	font-family: 'Raleway';
@@ -386,7 +387,7 @@ input:-moz-placeholder { /* Firefox 18- */
 }
 #mc-embedded-subscribe:hover {
 	cursor: pointer;
-	background: #00c85b;
+	background: #00B360;
 }
 
 /* ################### */
@@ -474,12 +475,26 @@ input:-moz-placeholder { /* Firefox 18- */
 
 /* foundation : small */
 @media screen and (max-width: 40em) {
-	.header-text {
+	div.logo-top {
+		width: 80px;
+	}
+
+	div.header-text {
 		font-size: 24px;
+	}
+
+	a#jump-button.button.primary.medium {
+		padding: 5px;
+		width: auto;
+		background: none;
 	}
 
 	.header-image img {
 		height: 40px;
+	}
+
+	.card p {
+		font-size: 14px;
 	}
 
 	.mailing-list {
